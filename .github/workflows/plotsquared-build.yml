@@ -45,8 +45,8 @@ jobs:
       - name: Verify Artifacts
         run: |
           ls -la ./external-plotsquared/Bukkit/build/libs/
-          if ! ls ./external-plotsquared/Bukkit/build/libs/PlotSquared-Bukkit-*.jar 2>/dev/null; then
-            echo "::error::PlotSquared-Bukkit-*.jar not found"
+          if ! ls ./external-plotsquared/Bukkit/build/libs/plotsquared-bukkit-*.jar 2>/dev/null; then
+            echo "::error::plotsquared-bukkit-*.jar not found"
             exit 1
           fi
           echo "Required JAR files exist"
@@ -65,4 +65,4 @@ jobs:
           automatic_release_tag: ${{ env.TAG_NAME }}
           prerelease: false
           title: "PlotSquared Build ${{ env.TAG_NAME }}"
-          files: ./external-plotsquared/Bukkit/build/libs/*.jar
+          files: ./external-plotsquared/Bukkit/build/libs/plotsquared-bukkit-*.jar
